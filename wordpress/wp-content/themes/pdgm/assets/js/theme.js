@@ -1,3 +1,18 @@
+document.querySelectorAll('.service-medicament-link').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        const target = document.getElementById('medicaments');
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+
 /* Design: calm micro-interactions, real actions only, keyboard-friendly modal behavior. */
 (function(){'use strict';
  const header=document.querySelector('[data-header]');
