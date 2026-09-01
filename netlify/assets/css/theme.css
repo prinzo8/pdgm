@@ -270,19 +270,35 @@ body * {
 }
 
 
-/* Mobile : position exactement au centre */
+/* Mobile : logo — statut — menu */
 @media (max-width: 768px) {
 
     .header-inner {
         position: relative;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+    }
+
+    .header-inner .brand {
+        justify-self: start;
     }
 
     .header-duty-status {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        grid-column: 2;
+        grid-row: 1;
+        position: static;
+        margin: 0;
+        transform: none;
+        justify-self: center;
         pointer-events: none;
+        z-index: 20;
+    }
+
+    .header-inner .menu-toggle {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
     }
 
 }
