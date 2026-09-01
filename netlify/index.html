@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pdgm</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: clamp(14px, 0.875rem + ((1vw - 3.2px) * 0.625), 20px);--wp--preset--font-size--large: clamp(22.041px, 1.378rem + ((1vw - 3.2px) * 1.454), 36px);--wp--preset--font-size--x-large: clamp(25.014px, 1.563rem + ((1vw - 3.2px) * 1.769), 42px);--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:root { --wp--style--global--content-size: 1180px;--wp--style--global--wide-size: 1280px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 1.5rem; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 1.5rem; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 1.5rem;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 1.5rem;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 1.5rem;}:root :where(.is-layout-grid){gap: 1.5rem;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{font-family: DM Sans, sans-serif;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='cmplz-general-css' href='' media='all' />
+<link rel='stylesheet' id='pgm-fonts-css' href='https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&#038;family=Fraunces:opsz,wght@9..144,500;9..144,600&#038;display=swap' media='all' />
+<link rel='stylesheet' id='pgm-style-css' href='assets/css/theme.css?ver=1.0.3' media='all' />
+</head>
+<body class="home blog wp-embed-responsive wp-theme-pdgm">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header" data-header>
+    <div class="header-inner">
+        <a class="brand" href="#accueil" aria-label="Pharmacie du Grand Marché San Pédro — Accueil">
+            <img class="brand-logo" src="assets/images/pharmacie-logo-ivoirien.webp" alt="Pharmacie du Grand Marché San Pédro">
+            <span class="brand-copy"><strong>Pharmacie</strong><em>du Grand Marché<br>San Pédro</em></span>
+        </a>
+
+        
+        <div class="header-duty-status is-on" aria-label="Pharmacie de garde">
+            <span class="duty-status-dot" aria-hidden="true"></span>
+            <span class="duty-status-label">De garde</span>
+        </div>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><b>Menu</b></button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale"><a href="#accueil">Accueil</a><a href="#pharmacie">La pharmacie</a><a href="#services">Services</a><a href="#conseils">Conseils</a><a href="#horaires">Horaires</a><a href="#horaires">Garde</a><a href="#medicaments">Médicaments</a><a href="#contact">Contact</a><div class="header-duty-status on-duty" aria-label="De garde"><span class="header-duty-dot" aria-hidden="true"></span><span class="header-duty-label">De garde</span></div><a class="nav-cta" href="#contact">Nous contacter <span class="phone-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a19.79 19.79 0 0 1 .62 2.63 2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+    </span></a></nav>
+    </div>
+
+<div class="site-progress" aria-hidden="true">
+    <span class="site-progress-bar"></span>
+</div>
+</header>
+<main id="contenu">
+<section id="accueil" class="hero section-pad">
+    <div class="container hero-grid">
+        <div class="hero-copy reveal">
+<div class="hero-duty-status on-duty">
+    <span class="hero-duty-dot" aria-hidden="true"></span>
+    <div>
+        <strong>Pharmacie de garde</strong>
+        <small>La pharmacie est actuellement de garde.</small>
+    </div>
+</div>
+<p class="eyebrow"><span class="flag-mark" aria-hidden="true"><i></i><i></i><i></i></span> San Pedro · Côte d’Ivoire</p><h1>Votre santé,<br><em>notre priorité.</em></h1><p class="hero-lead">Un repère de proximité pour vos médicaments, vos questions de santé et vos essentiels de bien-être au cœur du Grand Marché.</p><div class="hero-actions">
+<a class="button button-primary" href="#contact">
+    Nous contacter
+    <span class="hero-cta-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+    </span>
+</a>
+<a class="button button-quiet" href="https://maps.app.goo.gl/dDSs4A5R91sgfrZ78" target="_blank" rel="noopener">
+    Nous trouver
+    <span class="hero-cta-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+            <circle cx="12" cy="10" r="2.5"></circle>
+        </svg>
+    </span>
+</a>
+</div><div class="hero-note"><span class="pulse-dot"></span><span>Pharmacie du Grand Marché<br><strong>San Pedro, Côte d’Ivoire</strong></span></div></div>
+        <div class="hero-visual reveal reveal-delay"><div class="hero-image"><img src="assets/images/san-pedro-coast.webp" alt="Paysage côtier et atmosphère urbaine de San Pédro, en Côte d’Ivoire" loading="eager"><div class="hero-stamp"><span>PGM</span><small>Repère santé<br>à San Pedro</small></div></div><div class="scribble">proche · claire · attentive</div></div>
+    </div>
+</section>
+<section id="pharmacie" class="section section-paper section-pad"><div class="container split-grid"><div class="section-intro reveal"><p class="eyebrow">01 — La pharmacie</p><h2>Un conseil qui commence par <em>l’écoute.</em></h2><p>Notre Pharmacie à San-Pédro en Côte d’Ivoire propose une gamme complète de services pharmaceutiques, notamment la vente de médicaments sur ordonnance et de produits en vente libre. En plus des médicaments classiques, elle offre également des produits de santé, des soins de beauté, et des conseils personnalisés pour le bien-être des patients.</p><p>La pharmacie se distingue par son engagement envers la qualité du service et son accès à des produits authentiques, contribuant ainsi au soutien de la santé publique dans la région.</p><p class="muted">Les informations publiques présentées ici sont à confirmer auprès de l’équipe de la pharmacie.</p></div><div class="pharmacy-panel reveal reveal-delay"><img class="pharmacy-interior" src="assets/images/pharmacie-interieur-enhanced.webp" alt="Intérieur de la Pharmacie du Grand Marché à San Pédro, avec comptoir et rayonnages" loading="lazy"><div class="panel-top"><span class="round-icon">✦</span><span>Le mot du pharmacien</span></div><blockquote>« Chaque visite est l’occasion d’apporter un peu plus de clarté et de confiance. »</blockquote><p class="signature">Dr Yacinth Ocho<br><span>Pharmacien responsable</span></p><div class="value-row"><span>01</span><strong>Proximité</strong><span class="line"></span><span>San Pedro</span></div></div></div></section>
+<section id="services" class="section section-green section-pad"><div class="container"><div class="section-heading light reveal"><p class="eyebrow">02 — Services</p><h2>Le nécessaire,<br><em>avec le bon conseil.</em></h2><p>Des services essentiels, présentés avec clarté. Les disponibilités précises sont à confirmer auprès de la pharmacie.</p></div><div class="service-list"><article class="service-card reveal"><span class="service-num">01</span><span class="service-icon">✚</span><h3>Médicaments<br>& santé</h3><p>Médicaments sur ordonnance et produits de santé, selon disponibilité.</p><a href="#contact">Demander conseil <span>↗</span></a></article><article class="service-card reveal reveal-delay"><span class="service-num">02</span><span class="service-icon">◌</span><h3>Conseil<br>pharmaceutique</h3><p>Un échange pour mieux comprendre l’usage de vos traitements.</p><a href="#contact">Parler à l’équipe <span>↗</span></a></article><article class="service-card reveal reveal-delay-2"><span class="service-num">03</span><span class="service-icon">⌁</span><h3>Hygiène<br>& bien-être</h3><p>Une sélection d’essentiels pour prendre soin de soi au quotidien.</p><a href="#contact">Nous contacter <span>↗</span></a></article></div></div></section>
+<section id="conseils" class="section section-pad advice-section"><div class="container"><div class="section-heading reveal"><p class="eyebrow">03 — Conseils santé</p><h2>Quelques repères<br><em>pour chaque jour.</em></h2></div><div class="advice-grid"><article class="advice-card reveal"><span>01 / prévention</span><h3>Demander conseil, c’est déjà prendre soin de soi.</h3><p>Pour tout nouveau médicament ou toute question, demandez l’avis d’un professionnel de santé.</p></article><article class="advice-card advice-card-accent reveal reveal-delay"><span>02 / quotidien</span><h3>Hydratation, repos, régularité.</h3><p>De petits gestes simples soutiennent votre bien-être jour après jour, en complément d’un suivi adapté.</p></article><article class="advice-card reveal reveal-delay-2"><span>03 / sécurité</span><h3>Bien utiliser ses médicaments.</h3><p>Respectez la posologie prescrite et ne partagez jamais un traitement sans avis médical.</p></article></div><p class="disclaimer">Ces informations sont générales et ne remplacent pas un avis médical personnalisé.</p></div></section>
+<section id="horaires" class="section section-sand section-pad"><div class="container hours-layout"><div class="reveal"><p class="eyebrow">04 — Horaires</p><h2>Vous savez<br><em>quand passer.</em></h2><div class="duty-card"><div class="duty-card-head"><span class="round-icon">✚</span><div><strong>Pharmacie de garde</strong><small>Dates à retenir</small></div></div><p>Du lundi 1er septembre au dimanche 7 septembre 2026</p><small>Pharmacie de garde — veuillez confirmer les horaires auprès de la pharmacie.</small></div></div><div class="hours-card reveal reveal-delay"><div class="hours-card-head"><span class="round-icon">◷</span><div><strong>Horaires d’ouverture</strong><small>Horaires publiés à confirmer</small></div></div><div class="hours-row"><span>Lundi – Vendredi</span><strong>08:00 – 20:00</strong></div><div class="hours-row"><span>Samedi</span><strong>08:00 – 12:00</strong></div><div class="hours-row"><span>Dimanche</span><strong>À confirmer</strong></div></div></div></section>
+
+
+<section id="medicaments" class="section section-paper section-pad">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <p class="eyebrow">05 — Médicaments</p>
+
+            <h2>
+                Vérifier une
+                <br>
+                <em>disponibilité.</em>
+            </h2>
+
+            <p>
+                Recherchez un médicament pour vérifier s’il figure
+                parmi les produits disponibles à la pharmacie.
+            </p>
+        </div>
+
+        <div class="pgm-medicament-search-wrap reveal">
+
+            <label class="pgm-search-label" for="pgm-medicament-search">
+                Rechercher un médicament
+            </label>
+
+            <div class="pgm-search-box">
+                <span class="pgm-search-icon" aria-hidden="true">⌕</span>
+
+                <input
+                    id="pgm-medicament-search"
+                    type="search"
+                    autocomplete="off"
+                    placeholder="Commencez à taper le nom..."
+                    aria-label="Rechercher un médicament"
+                >
+            </div>
+
+            <p class="pgm-search-hint">
+                Tapez au moins une lettre pour afficher les résultats.
+            </p>
+
+                            <span
+                    data-medicament="Acétylsalicylate de lysine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Aciclovir"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Acide acétylsalicylique"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Acyclovir"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Albendazole"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Allopurinol"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Amlodipine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Amoxicilline"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Amoxicilline + acide clavulanique"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Artéméther"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Artemether + lumefantrine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Artemisinine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Artésunate"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Atenolol"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Atorvastatine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Azithromycine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Benzathine benzylpénicilline"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Benzylpénicilline"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Bétaméthasone"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Bisacodyl"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Bromazépam"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Budesonide"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Captopril"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Carbamazépine"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Cefixime"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Ceftriaxone"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Cetirizine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Chloramphénicol"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Chlorhexidine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Chloroquine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Ciprofloxacine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Clarithromycine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Clindamycine"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Clonazépam"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Clopidogrel"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Clotrimazole"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Codeine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Dexaméthasone"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Diazépam"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Diclofénac"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Digoxine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Doxycycline"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Enalapril"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Erythromycine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Esoméprazole"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Fer + acide folique"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Fluconazole"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Fluoxétine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Folic acid"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Furosémide"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Gentamicine"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Glibenclamide"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Gliclazide"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Glimepiride"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Glycérine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Hydrochlorothiazide"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Hydrocortisone"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Ibuprofène"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Insuline humaine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Ipratropium"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Ivermectine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Ketoconazole"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Kétoprofène"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Lactulose"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Lidocaïne"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Loratadine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Losartan"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Magnesium hydroxide"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Mebendazole"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Méclozine"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Metformine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Méthotrexate"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Methyldopa"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Metoclopramide"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Metronidazole"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Miconazole"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Montélukast"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Morphine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Naproxène"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Nifedipine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Nitrofurantoïne"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Oméprazole"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Ondansétron"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Paracétamol"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Perméthrine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Phénobarbital"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Phénytoïne"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Povidone iodée"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Prednisolone"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Prednisone"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Propranolol"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Quinine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Ramipril"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Ranitidine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Rifampicine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Salbutamol"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Sérum physiologique"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Simvastatine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Solution de réhydratation orale"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Spironolactone"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Sulfadiazine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Sulfaméthoxazole + triméthoprime"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Tamsulosine"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Terbinafine"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Tétracycline"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Tramadol"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Trimébutine"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Valaciclovir"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Valproate de sodium"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Valsartan"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Venlafaxine"
+                    data-available="true"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Verapamil"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Vitamine A"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Vitamine B1"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Vitamine B12"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Vitamine B6"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Vitamine C"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Vitamine D"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Zinc"
+                    data-available="false"
+                    hidden
+                ></span>
+                            <span
+                    data-medicament="Zolpidem"
+                    data-available="true"
+                    hidden
+                ></span>
+            
+            <div
+                id="pgm-medicament-results"
+                class="pgm-medicament-results"
+                aria-live="polite"
+            ></div>
+
+            <div
+                id="pgm-medicament-empty"
+                class="pgm-medicament-empty"
+                hidden
+            >
+                Aucun médicament correspondant trouvé.
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section id="localisation" class="section section-pad"><div class="container location-grid"><div class="map-visual reveal">
+    <iframe
+        src="https://www.google.com/maps?q=4.77863,-6.65600&z=17&output=embed"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Pharmacie du Grand Marché — San Pedro, Côte d’Ivoire">
+    </iframe>
+</div><div class="location-copy reveal reveal-delay"><p class="eyebrow">05 — Localisation</p><h2>Au cœur de<br><em>San Pedro.</em></h2><p class="address"><strong>Pharmacie du Grand Marché</strong><br>Grand Marché\n01 BP 1366 San Pédro 01<br>San Pedro, Côte d’Ivoire</p><div class="hero-actions"><a class="button button-primary" href="https://maps.app.goo.gl/dDSs4A5R91sgfrZ78" target="_blank" rel="noopener">Ouvrir Google Maps <span>↗</span></a></div><p class="coordinates">Repère cartographique public · 4.77863, −6.65600</p></div></div></section>
+<section id="contact" class="section contact-section section-pad"><div class="container contact-layout"><div class="contact-intro reveal"><p class="eyebrow">06 — Contact</p><h2>Une question ?<br><em>Nous sommes là.</em></h2><p>Pour confirmer les horaires, la disponibilité d’un produit ou l’itinéraire, choisissez le moyen le plus simple pour vous.</p></div><div class="contact-actions reveal reveal-delay"><a class="contact-action" href="tel:+2252734715555"><span class="contact-icon">☎</span><span><small>Appeler</small><strong>+225 27 34 71 55 55</strong></span><b>↗</b></a><a class="contact-action" href="https://wa.me/2252734715555" target="_blank" rel="noopener"><span class="contact-icon contact-icon-whatsapp" aria-hidden="true">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L.05 24l6.28-1.65a11.88 11.88 0 0 0 5.72 1.46h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.16-3.44-8.43ZM12.06 21.8h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.85 9.85 0 0 1-1.51-5.28C2.19 6.43 6.62 2 12.07 2c2.64 0 5.12 1.03 6.98 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.43 9.9-9.88 9.9Zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+</svg>
+</span><span><small>WhatsApp</small><strong>Écrire à la pharmacie</strong></span><b>↗</b></a><a class="contact-action" href="https://maps.app.goo.gl/dDSs4A5R91sgfrZ78" target="_blank" rel="noopener"><span class="contact-icon">⌖</span><span><small>Adresse</small><strong>Grand Marché · San Pedro</strong></span><b>↗</b></a></div></div></section>
+</main><footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a class="brand brand-light" href="#accueil"><img class="brand-logo" src="assets/images/pharmacie-logo-ivoirien.webp" alt="" aria-hidden="true"><span class="brand-copy"><strong>Pharmacie</strong><em>du Grand Marché<br>San Pédro</em></span></a><p>Un repère de santé au cœur de<br>San Pedro, Côte d’Ivoire.</p></div><div><p class="footer-label">Contact</p><a href="tel:+2252734715555">Téléphone</a><a href="https://wa.me/2252734715555" target="_blank" rel="noopener">WhatsApp</a></div><div><p class="footer-label">Navigation</p><a href="#pharmacie">La pharmacie</a><a href="#services">Services</a><a href="#conseils">Conseils</a><a href="#contact">Contact</a></div><div><p class="footer-label">Informations légales</p><button class="footer-link" data-modal-open="legal">Mentions légales</button><button class="footer-link" data-modal-open="privacy">Politique de confidentialité</button>
+</div></div><div class="container footer-institutions"><p class="footer-label">Repères institutionnels</p><div class="institution-logos"><span class="institution-emblem"><img src="assets/images/embleme-cote-divoire-cropped.webp" alt="Emblème de la République de Côte d’Ivoire fourni par le client"></span><a href="https://www.sante.gouv.ci/accueil" target="_blank" rel="noopener" aria-label="Ministère de la Santé de Côte d’Ivoire"><img src="assets/images/logo-ministere-sante-ci-final.webp" alt="Ministère de la Santé, de l’Hygiène Publique et de la Couverture Maladie Universelle"></a><a href="https://ordrepharmacien.ci/" target="_blank" rel="noopener" aria-label="Ordre National des Pharmaciens de Côte d’Ivoire"><img src="assets/images/logo-ordre-pharmaciens-ci-cropped.webp" alt="Ordre National des Pharmaciens de Côte d’Ivoire"></a></div><small>Logos institutionnels issus de sources publiques et présentés à titre informatif.</small></div><div class="container footer-bottom"><span>© 2026 Pharmacie du Grand Marché</span><span class="footer-flag" aria-label="Côte d’Ivoire"><i></i><i></i><i></i></span><span>San Pedro · Côte d’Ivoire</span></div>
+</footer>
+<button class="section-back" type="button" aria-label="Revenir à la section précédente" title="Section précédente">
+    <span aria-hidden="true">↑</span>
+</button>
+<div class="modal" data-modal="legal" role="dialog" aria-modal="true" aria-labelledby="legal-title" hidden><div class="modal-backdrop" data-modal-close></div><div class="modal-card"><button class="modal-close" data-modal-close aria-label="Fermer">×</button><p class="eyebrow">Informations</p><h2 id="legal-title">Mentions légales</h2><p>Ce site est édité pour la Pharmacie du Grand Marché, située à San Pedro, Côte d’Ivoire.</p><p>Les informations de contact, les horaires et les contenus de ce site sont à vérifier et à maintenir à jour par l’équipe de la pharmacie. Les textes de conseils santé sont généraux et ne remplacent pas un avis médical personnalisé.</p><p><strong>Responsable de publication :</strong> Dr Yacinth Ocho.</p><p><strong>Conception, direction artistique, design UI/UX, développement front-end et back-end, intégration, architecture technique et mise en production :</strong> Prince Ocho.</p><p>L’ensemble de la conception technique et visuelle du site, incluant son identité numérique, son interface utilisateur, son développement logiciel, son intégration et son déploiement, a été réalisé par Prince Ocho.</p></div></div>
+<div class="modal" data-modal="privacy" role="dialog" aria-modal="true" aria-labelledby="privacy-title" hidden><div class="modal-backdrop" data-modal-close></div><div class="modal-card"><button class="modal-close" data-modal-close aria-label="Fermer">×</button><p class="eyebrow">Vos données</p><h2 id="privacy-title">Politique de confidentialité</h2><p>Ce site ne demande pas de compte et n’intègre pas de formulaire de collecte dans cette version. Les liens Appeler, WhatsApp et Google Maps ouvrent des services externes lorsque vous les activez.</p><p>Pour toute question concernant vos données ou l’utilisation du site, contactez directement la pharmacie via les coordonnées affichées.</p></div></div>
+<div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
+
+</body></html>
