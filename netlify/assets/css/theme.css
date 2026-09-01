@@ -299,6 +299,7 @@ body * {
         grid-column: 3;
         grid-row: 1;
         justify-self: end;
+        margin-right: 4px;
     }
 
 }
