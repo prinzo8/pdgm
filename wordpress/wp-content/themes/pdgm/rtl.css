@@ -1,0 +1,2 @@
+/* RTL support: the visual system remains intentionally spacious and editorial. */
+body{direction:rtl;text-align:right}.primary-nav,.hero-actions,.footer-bottom{direction:rtl}.hero-copy,.section-intro,.location-copy,.contact-intro{direction:rtl}.section:before{left:auto;right:max(12px,calc((100% - 1180px)/2))}.section:after{left:auto;right:max(18px,calc((100% - 1180px)/2 + 4px))}.service-card a{left:auto;right:30px}.hours-row strong{margin-right:auto}.hours-row{direction:rtl}

@@ -1,0 +1,54 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: pdgm_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: pdgm
+      MYSQL_USER: pdgm
+      MYSQL_PASSWORD: pdgm_password
+      MYSQL_ROOT_PASSWORD: pdgm_root_password
+    volumes:
+      - pdgm_db_data:/var/lib/mysql
+    networks:
+      - pdgm_internal
+
+  wordpress:
+    image: wordpress:latest
+    container_name: pdgm_wordpress
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: pdgm
+      WORDPRESS_DB_USER: pdgm
+      WORDPRESS_DB_PASSWORD: pdgm_password
+    volumes:
+      - ./wordpress:/var/www/html
+    networks:
+      - pdgm_internal
+      - proxy
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: pdgm_phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    networks:
+      - pdgm_internal
+      - proxy
+
+networks:
+  pdgm_internal:
+    driver: bridge
+
+  proxy:
+    external: true
+
+volumes:
+  pdgm_db_data:

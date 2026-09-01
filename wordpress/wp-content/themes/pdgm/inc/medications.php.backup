@@ -1,0 +1,270 @@
+<?php
+/**
+ * Pharmacie du Grand Marché
+ * Gestion des médicaments et de leur disponibilité.
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+/**
+ * Custom Post Type : Médicaments
+ */
+function pgm_register_medications() {
+
+    $labels = array(
+        'name'               => 'Médicaments',
+        'singular_name'      => 'Médicament',
+        'menu_name'          => 'Médicaments',
+        'add_new'            => 'Ajouter',
+        'add_new_item'       => 'Ajouter un médicament',
+        'edit_item'          => 'Modifier le médicament',
+        'new_item'           => 'Nouveau médicament',
+        'view_item'          => 'Voir le médicament',
+        'search_items'       => 'Rechercher un médicament',
+        'not_found'          => 'Aucun médicament trouvé',
+        'not_found_in_trash' => 'Aucun médicament dans la corbeille',
+    );
+
+    register_post_type(
+        'pgm_medication',
+        array(
+            'labels'             => $labels,
+            'public'             => false,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'menu_icon'          => 'dashicons-plus-alt',
+            'supports'           => array( 'title' ),
+            'show_in_rest'       => true,
+            'capability_type'    => 'post',
+            'map_meta_cap'       => true,
+        )
+    );
+}
+add_action( 'init', 'pgm_register_medications' );
+
+
+/**
+ * Champ de disponibilité.
+ */
+function pgm_medication_meta_box() {
+
+    add_meta_box(
+        'pgm_medication_availability',
+        'Disponibilité',
+        'pgm_medication_availability_callback',
+        'pgm_medication',
+        'side',
+        'high'
+    );
+}
+add_action( 'add_meta_boxes', 'pgm_medication_meta_box' );
+
+
+/**
+ * Interface du champ disponibilité.
+ */
+function pgm_medication_availability_callback( $post ) {
+
+    wp_nonce_field(
+        'pgm_save_medication',
+        'pgm_medication_nonce'
+    );
+
+    $available = get_post_meta(
+        $post->ID,
+        '_pgm_medication_available',
+        true
+    );
+
+    ?>
+    <p>
+        <label for="pgm_medication_available">
+            <strong>État du médicament</strong>
+        </label>
+    </p>
+
+    <select
+        name="pgm_medication_available"
+        id="pgm_medication_available"
+        style="width:100%;"
+    >
+        <option value="1" <?php selected( $available, '1' ); ?>>
+            Disponible
+        </option>
+
+        <option value="0" <?php selected( $available, '0' ); ?>>
+            Indisponible
+        </option>
+    </select>
+
+    <p style="margin-top:10px;color:#666;">
+        Cet état sera affiché aux visiteurs sur le site.
+    </p>
+    <?php
+}
+
+
+/**
+ * Enregistre la disponibilité.
+ */
+function pgm_save_medication( $post_id ) {
+
+    if (
+        ! isset( $_POST['pgm_medication_nonce'] ) ||
+        ! wp_verify_nonce(
+            $_POST['pgm_medication_nonce'],
+            'pgm_save_medication'
+        )
+    ) {
+        return;
+    }
+
+    if (
+        defined( 'DOING_AUTOSAVE' ) &&
+        DOING_AUTOSAVE
+    ) {
+        return;
+    }
+
+    if (
+        ! current_user_can(
+            'edit_post',
+            $post_id
+        )
+    ) {
+        return;
+    }
+
+    if (
+        get_post_type( $post_id ) !== 'pgm_medication'
+    ) {
+        return;
+    }
+
+    $available = isset(
+        $_POST['pgm_medication_available']
+    )
+        ? sanitize_text_field(
+            $_POST['pgm_medication_available']
+        )
+        : '0';
+
+    update_post_meta(
+        $post_id,
+        '_pgm_medication_available',
+        $available === '1' ? '1' : '0'
+    );
+}
+add_action(
+    'save_post_pgm_medication',
+    'pgm_save_medication'
+);
+
+
+/**
+ * Colonnes personnalisées dans l'administration.
+ */
+function pgm_medication_columns( $columns ) {
+
+    return array(
+        'cb'           => $columns['cb'],
+        'title'        => 'Médicament',
+        'availability' => 'Disponibilité',
+        'date'         => 'Date',
+    );
+}
+add_filter(
+    'manage_pgm_medication_posts_columns',
+    'pgm_medication_columns'
+);
+
+
+/**
+ * Contenu de la colonne disponibilité.
+ */
+function pgm_medication_column_content(
+    $column,
+    $post_id
+) {
+
+    if ( $column !== 'availability' ) {
+        return;
+    }
+
+    $available = get_post_meta(
+        $post_id,
+        '_pgm_medication_available',
+        true
+    );
+
+    if ( $available === '' || $available === '1' ) {
+        echo '<span style="color:#188653;font-weight:600;">● Disponible</span>';
+    } else {
+        echo '<span style="color:#d88922;font-weight:600;">● Indisponible</span>';
+    }
+}
+add_action(
+    'manage_pgm_medication_posts_custom_column',
+    'pgm_medication_column_content',
+    10,
+    2
+);
+
+
+/**
+ * Tri alphabétique par défaut dans l'administration.
+ */
+function pgm_medication_order( $query ) {
+
+    if (
+        is_admin() &&
+        $query->is_main_query() &&
+        $query->get( 'post_type' ) === 'pgm_medication'
+    ) {
+        $query->set( 'orderby', 'title' );
+        $query->set( 'order', 'ASC' );
+    }
+}
+add_action(
+    'pre_get_posts',
+    'pgm_medication_order'
+);
+
+
+/**
+ * Données des médicaments disponibles pour le front-end.
+ */
+function pgm_get_medications() {
+
+    $query = new WP_Query(
+        array(
+            'post_type'      => 'pgm_medication',
+            'post_status'    => 'publish',
+            'posts_per_page' => -1,
+            'orderby'        => 'title',
+            'order'          => 'ASC',
+        )
+    );
+
+    $medications = array();
+
+    foreach ( $query->posts as $post ) {
+
+        $available = get_post_meta(
+            $post->ID,
+            '_pgm_medication_available',
+            true
+        );
+
+        $medications[] = array(
+            'name'      => get_the_title( $post->ID ),
+            'available' => $available === '' || $available === '1',
+        );
+    }
+
+    wp_reset_postdata();
+
+    return $medications;
+}
