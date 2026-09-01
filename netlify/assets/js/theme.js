@@ -4,7 +4,13 @@
  const toggle=document.querySelector('.menu-toggle'); const nav=document.querySelector('.primary-nav');
  const onScroll=()=>header&&header.classList.toggle('scrolled',window.scrollY>30); window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
  if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));}
- const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.14});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+ const revealElements=document.querySelectorAll('.reveal');
+ if('IntersectionObserver' in window){
+   const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.14});
+   revealElements.forEach(el=>observer.observe(el));
+ }else{
+   revealElements.forEach(el=>el.classList.add('visible'));
+ }
  let lastFocus=null; const openModal=(name)=>{const modal=document.querySelector('[data-modal="'+name+'"]');if(!modal)return;lastFocus=document.activeElement;modal.hidden=false;document.body.style.overflow='hidden';const close=modal.querySelector('[data-modal-close]');if(close)close.focus();}; const closeModal=()=>{const modal=document.querySelector('.modal:not([hidden])');if(!modal)return;modal.hidden=true;document.body.style.overflow='';if(lastFocus)lastFocus.focus();};
  document.querySelectorAll('[data-modal-open]').forEach(b=>b.addEventListener('click',()=>openModal(b.dataset.modalOpen)));document.querySelectorAll('[data-modal-close]').forEach(b=>b.addEventListener('click',closeModal));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1){const target=document.querySelector(id);if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}}}));
