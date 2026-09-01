@@ -656,3 +656,30 @@ body * {
     }
 
 }
+
+/* Icônes des actions — cohérentes avec chaque type de lien */
+.service-cta-icon,
+.contact-action-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 9px;
+    vertical-align: middle;
+}
+
+.service-cta-icon svg,
+.contact-action-icon svg {
+    display: block;
+}
+
+.contact-action-icon {
+    color: var(--orange);
+    flex:none;
+    width: 24px;
+    height: 24px;
+}
+
+.contact-action-icon.whatsapp-icon {
+    color: var(--green);
+}
+
